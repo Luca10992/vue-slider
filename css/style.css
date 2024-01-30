@@ -31,13 +31,6 @@ body {
     border-radius: 10px;
     cursor: pointer;
 }
-.slide {
-    display: none;
-}
-
-.active {
-    display: block;
-}
 
 .miniature-container {
     width: 100%;
@@ -66,11 +59,11 @@ body {
 }
 
 .arrow-left {
-    left: 5px;
+    left: 8px;
 }
 
 .arrow-right {
-    right: 5px;
+    right: 8px;
 }
 
 .arrow-left:hover,

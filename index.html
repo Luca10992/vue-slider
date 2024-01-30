@@ -42,17 +42,20 @@
     <!-- Fine Header -->
     <!-- Inizio Main -->
     <main>
-
-        <div class="container gap-2 d-flex flex-column justify-content-center">
-            <div class="carousel mx-auto w-50">
-                <div class="container-primary">
-                    
+        <div id="app">
+            <div class="container gap-2 d-flex flex-column justify-content-center">
+                <div @mouseover="stopAutoplay()" @mouseleave="setAutoplay()" class="carousel mx-auto w-50">
+                    <div class="container-primary">
+                        <img :src="slides[currentImage]" class="slide">
+                    </div>
+                    <div class="arrow-right" @click="nextSlide()"><i class="bi bi-caret-right fs-2"></i></div>
+                    <div class="arrow-left" @click="prevSlide()"><i class="bi bi-caret-left fs-2"></i></div>
                 </div>
-                <div class="arrow-left"><i class="bi bi-caret-left fs-2"></i></div>
-                <div class="arrow-right"><i class="bi bi-caret-right fs-2"></i></div>
-            </div>
-            <div class="miniature-container d-flex gap-2 justify-content-around">
-
+                <div class="miniature-container d-flex gap-2 justify-content-around">
+                    <div class="slide-container" v-for="(slide, index) in slides">
+                        <img @click="clickMiniature(index)" :src="slide" class="miniature" :class="index == currentImage ? 'active' : ''">
+                    </div>
+                </div>
             </div>
         </div>
 
